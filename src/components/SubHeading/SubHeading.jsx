@@ -2,7 +2,6 @@ import React from "react";
 
 import { images } from "../../constants";
 
-// setting that title as a prop in the subheading component
 const SubHeading = ({ title }) => (
 	<div style={{ marginBottom: "1rem" }}>
 		<p className='p__cormorant'>{title}</p>
