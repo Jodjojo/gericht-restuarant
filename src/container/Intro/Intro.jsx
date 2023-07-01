@@ -16,6 +16,13 @@ const Intro = () => {
 	// to toggle if the previous play video is true or false
 	const handleVideo = () => {
 		setPlayVideo((prevPlayVideo) => !prevPlayVideo);
+
+		// if play video is true and then already playing then change the current video ref and then pause it on that click else we want to play it
+		if (playVideo) {
+			vidRef.current.pause();
+		} else {
+			vidRef.current.play();
+		}
 	};
 
 	return (
@@ -33,7 +40,14 @@ const Intro = () => {
 				<div
 					className='app__video-overlay_circle flex__center'
 					onClick={handleVideo}
-				></div>
+				>
+					{/* Using the react icons we use the bspausefill if playvideo  is set to true and already playing else we use the bsfillplayfill */}
+					{playVideo ? (
+						<BsPauseFill color='#fff' fontSize={30} />
+					) : (
+						<BsFillPlayFill color='#fff' fontSize={30} />
+					)}
+				</div>
 			</div>
 		</div>
 	);
