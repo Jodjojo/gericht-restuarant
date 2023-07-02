@@ -1,11 +1,16 @@
-import React from 'react';
+import React from "react";
 
-import './Footer.css';
+import { FooterOverlay, Newsletter } from "../../components";
+// importing icons for these social media from react icons
+import { FiFacebook, FiTwitter, FiInstagram } from "react-icons/fi";
+
+import "./Footer.css";
 
 const Footer = () => (
-  <div>
-    Footer
-  </div>
+	<div className='app__footer section__padding'>
+		<FooterOverlay />
+		<Newsletter />
+	</div>
 );
 
 export default Footer;
